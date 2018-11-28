@@ -47,7 +47,7 @@ public class fullretard {
                 j--;
             }
             if (i <= j) {
-                exchangeNumbers(array, i, j);
+               array =  exchangeNumbers(array, i, j);
                 //move index to next position on both sides
                 i++;
                 j--;
