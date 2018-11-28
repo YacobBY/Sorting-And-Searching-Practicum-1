@@ -10,6 +10,7 @@ public class Player implements Comparable<Player> {
     private String lastName;
     private long highScore;
 
+
     public Player(String firstName, String lastName, long highScore) {
         this.firstName = firstName;
         this.lastName = lastName;
