@@ -1,9 +1,11 @@
 package nl.hva.ict.ss;
 
 import java.util.LinkedList;
+import nl.hva.ict.ss.util.fullretard;
+
 
 public class AdvancedSorts {
-
+    public static fullretard arraySorter = new fullretard();
     /**
      * Implement quicksort using LinkedList only! Usage of anything but LinkedList will result in failing the assignment!
      * @param unsorted
@@ -23,7 +25,8 @@ public class AdvancedSorts {
     public static <E extends Comparable<E>> E[] quickSort(E[] unsorted  )
     {
 
-        return unsorted;
+        arraySorter.sort(unsorted);
+        return unsorted ;
 
     }
 

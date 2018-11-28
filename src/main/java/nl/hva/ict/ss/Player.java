@@ -44,9 +44,9 @@ public class Player implements Comparable<Player> {
         }
     }
 
-    // Should sort accending on highscore
-    // If high score is equal sort by lastname
-    // If lastnameis equal sort by firstname
+    // Should arraySorter accending on highscore
+    // If high score is equal arraySorter by lastname
+    // If lastnameis equal arraySorter by firstname
 
 
     public int compareHighScore(long otherHighscore) {
