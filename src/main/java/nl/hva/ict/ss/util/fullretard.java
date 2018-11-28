@@ -11,8 +11,8 @@ public class fullretard {
         int[] input = {24,2,45,20,56,75,2,56,99,53,12};
         sorter.sort(input);
         for(int i:input){
-            System.out.print(i);
-            System.out.print(" ");
+            System.out.print(i + " ");
+
         }
     }
 
@@ -23,15 +23,15 @@ public class fullretard {
         }
         this.array = inputArr;
         length = inputArr.length;
-        quickSort(0, length - 1);
+        quickSort(array, 0, length - 1);
     }
 
-    private void quickSort(int lowerIndex, int higherIndex) {
+    private void quickSort(int[] inputArray, int lowerIndex, int higherIndex) {
 
         int i = lowerIndex;
         int j = higherIndex;
         // calculate pivot number, I am taking pivot as middle index number
-        int pivot = array[lowerIndex+(higherIndex-lowerIndex)/2];
+        int pivot = inputArray[lowerIndex+(higherIndex-lowerIndex)/2];
         // Divide into two arrays
         while (i <= j) {
             /**
@@ -40,14 +40,14 @@ public class fullretard {
              * from right side which is less then the pivot value. Once the search
              * is done, then we exchange both numbers.
              */
-            while (array[i] < pivot) {
+            while (inputArray[i] < pivot) {
                 i++;
             }
-            while (array[j] > pivot) {
+            while (inputArray[j] > pivot) {
                 j--;
             }
             if (i <= j) {
-               array =  exchangeNumbers(array, i, j);
+                inputArray =  exchangeNumbers(inputArray, i, j);
                 //move index to next position on both sides
                 i++;
                 j--;
@@ -55,9 +55,9 @@ public class fullretard {
         }
         // call quickSort() method recursively
         if (lowerIndex < j)
-            quickSort(lowerIndex, j);
+            quickSort(inputArray,lowerIndex, j);
         if (i < higherIndex)
-            quickSort(i, higherIndex);
+            quickSort(inputArray,i, higherIndex);
     }
 
     private int[] exchangeNumbers(int[] array, int lowerIndex, int higherIndex) {
