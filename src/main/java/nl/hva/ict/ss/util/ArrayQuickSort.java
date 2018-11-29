@@ -2,14 +2,14 @@ package nl.hva.ict.ss.util;
 
 import nl.hva.ict.ss.Player;
 
-public class fullretard {
+public class ArrayQuickSort {
 
 
     public static void main(String a[]) {
         Player player1 = new Player("Henk", "Henkie", 12112121);
         Player player2 = new Player("asdfw", "wefqwfe", 1231);
         Player player3 = new Player("dsvcawec", "asdvccaewf", 45243);
-        fullretard sorter = new fullretard();
+        ArrayQuickSort sorter = new ArrayQuickSort();
         Player[] input = {player1,player2,player3};
         input = sorter.sort(input);
         for (Player i: input) {
@@ -18,6 +18,7 @@ public class fullretard {
     }
 
     public <E extends Comparable<E>> E[] sort(E[] inputArr) {
+
         if (inputArr == null || inputArr.length == 0) {
             return inputArr;
         }

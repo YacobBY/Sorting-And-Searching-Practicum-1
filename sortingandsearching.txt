@@ -1,0 +1,22 @@
+Linkedlist finalItems;
+
+if linkedlist.size == 1: 
+	finalItems.add(linkedlist.head) 
+If linkedlist.size >1:
+	head.previous = new linkedlist (new head)
+	tail.next = new linkedlist(new tail)
+	
+	
+
+	create linkedlist van linkedlists
+		
+
+		Add linkedlist<E> item die kleiner is dan pivot aan head van de huidige Linkedlist<E>
+
+		Add linkedlist <E> item die groter is dan pivot aan tail linkedlist van de huidige LinkedList
+		
+		Linkedlist head.sort
+		
+		Finallist.add<currentItem>
+
+		linkedlist tail.sort

@@ -1,13 +1,16 @@
 package nl.hva.ict.ss;
 
+import nl.hva.ict.ss.util.ArrayQuickSort;
+
 import java.util.LinkedList;
-import nl.hva.ict.ss.util.fullretard;
 
 
 public class AdvancedSorts {
-    public static fullretard arraySorter = new fullretard();
+    public static ArrayQuickSort arraySorter = new ArrayQuickSort();
+
     /**
      * Implement quicksort using LinkedList only! Usage of anything but LinkedList will result in failing the assignment!
+     *
      * @param unsorted
      * @param <E>
      * @return
@@ -18,18 +21,17 @@ public class AdvancedSorts {
 
     /**
      * Implement quicksort using arrays only! Usage of anything but arrays will result in failing the assignment!
+     *
      * @param unsorted
      * @param <E>
      * @return
      */
-    public static <E extends Comparable<E>> E[] quickSort(E[] unsorted  )
-    {
+    public static <E extends Comparable<E>> E[] quickSort(E[] unsorted) {
 
         arraySorter.sort(unsorted);
-        return unsorted ;
+        return unsorted;
 
     }
-
 
 
 //
