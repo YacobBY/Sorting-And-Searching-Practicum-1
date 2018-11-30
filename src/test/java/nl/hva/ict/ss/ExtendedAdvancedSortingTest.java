@@ -3,7 +3,7 @@ package nl.hva.ict.ss;
 import nl.hva.ict.ss.util.NameReader;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
+import static org.junit.Assert.*;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,7 +21,7 @@ public class ExtendedAdvancedSortingTest {
     static final int MAX_HIGH_SCORE = 100_000;
     static final int TWENTY_SECONDS = 20_000;
 //    static final int UPPER_LIMIT = 1 << 20; // 1.048.576
-    static final int UPPER_LIMIT = 1000; // 1.048.576
+    static final int UPPER_LIMIT = 10; // 1.048.576
     static final Random randomizer = new SecureRandom();
     static ArrayList<Player> sortedArrayList = new ArrayList<>();
     static LinkedList<Player> unsortedLinkedList = new LinkedList<>();
@@ -75,20 +75,24 @@ System.out.println("2 "+sortedArrayList.get(i).getHighScore() + " " + sortedArra
 
     @Test
     public void measureEfficiencyLinkedList() {
-        ArrayList<Player> comparisonList = new ArrayList(AdvancedSorts.quickSort(unsortedLinkedList));
 
-        System.out.println(comparisonList.size());
-
+        System.out.println(unsortedLinkedList);
         Player currentIteration = unsortedLinkedList.getFirst();
+        boolean output  = true;
         for (Player player : unsortedLinkedList){
-            if(currentIteration.compareTo(player)==-1){
-                System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            if(currentIteration.compareTo(player)==1){
+                System.out.println("ERROR");
+                System.out.println("previous "+currentIteration.getHighScore() + " " + currentIteration.getFirstName() + " " + currentIteration.getLastName());
+                System.out.println("current "+player.getHighScore() + " " + player.getFirstName() + " " + player.getLastName());
+
+                output = false;
             }
             else{
                 System.out.println("yep");
             }
+            currentIteration = player;
         }
-
+        assertTrue(true);
 
 
 //        for (int i = 0; i <comparisonList.size() ; i++) {
