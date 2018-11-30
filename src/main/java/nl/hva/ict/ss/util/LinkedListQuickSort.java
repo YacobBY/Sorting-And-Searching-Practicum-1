@@ -3,13 +3,7 @@ package nl.hva.ict.ss.util;
 import java.util.LinkedList;
 
 public class LinkedListQuickSort {
-//
-//    public static LinkedList returnList = new LinkedList();
-//
-//    public<E extends Comparable<E>> LinkedList<E> LinkedListQuickSort(LinkedList<E> toSortList){
-//        sortLinkedList(toSortList);
-//        return returnList;
-//    }
+
     public static void main(String[] args) {
         LinkedList listie = new LinkedList<Integer>();
         listie.add(8);
