@@ -38,7 +38,7 @@ public class Player implements Comparable<Player> {
         if (compareHighScore(other.getHighScore()) != 0) {
             return compareHighScore(other.getHighScore());
         } else if (lastName.compareTo(other.getLastName()) != 0) {
-            return lastName.compareTo(other.getFirstName());
+            return lastName.compareTo(other.getLastName());
         } else {
             return firstName.compareTo(other.getFirstName());
         }
