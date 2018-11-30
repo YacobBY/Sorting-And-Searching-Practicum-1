@@ -14,11 +14,18 @@ public class LinkedListQuickSort {
 //    }
     public static void main(String[] args) {
         LinkedList<Player> listie = new LinkedList<>();
+        listie.add(new Player("AA", "aaa", 446));
         listie.add(new Player("AA", "aaa", 444));
-        listie.add(new Player("AA", "bb", 445));
+        listie.add(new Player("ss", "zz", 445));
         listie.add(new Player("AA", "bb", 444));
-        listie.add(new Player("AA", "aaa", 444));
-        listie.add(new Player("AA", "aaa", 444));
+        listie.add(new Player("AA", "zz", 444));
+        listie.add(new Player("AA", "zz", 444));
+        listie.add(new Player("AA", "zz", 444));
+        listie.add(new Player("AA", "zz", 444));
+        listie.add(new Player("AA", "zz", 443));
+        listie.add(new Player("AA", "zz", 444));
+        listie.add(new Player("AA", "zz", 444));
+
 
         System.out.println(listie.size());
         listie = sortLinkedList(listie);
