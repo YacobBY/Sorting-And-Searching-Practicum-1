@@ -23,7 +23,6 @@ public class ExtendedAdvancedSortingTest {
     //    static final int UPPER_LIMIT = 1 << 20; // 1.048.576
     static final int UPPER_LIMIT = 10; // 1.048.576
     static final Random randomizer = new SecureRandom();
-    static ArrayList<Player> sortedArrayList = new ArrayList<>();
     static LinkedList<Player> unsortedLinkedList = new LinkedList<>();
 
     @BeforeClass
@@ -37,10 +36,8 @@ public class ExtendedAdvancedSortingTest {
             String lastName = lastNames[randomizer.nextInt(lastNames.length)];
             Player toAdd = (new Player(firstName, lastName, randomizer.nextInt(MAX_HIGH_SCORE)));
             unsortedLinkedList.addLast(toAdd);
-            sortedArrayList.add(toAdd);
 
         }
-        Collections.sort(sortedArrayList);
         System.out.printf("%nStart measurements.%n%n");
         System.out.flush();
 
@@ -51,11 +48,8 @@ public class ExtendedAdvancedSortingTest {
 
     @Test
     public  void checkIfLinkedListIsSorted() {
-        LinkedList<Player> sortedList = AdvancedSorts.quickSort(unsortedLinkedList);
-        System.out.println("size:");
-        System.out.println(sortedList.size());
 
-        assertTrue(linkedListIsSorted(sortedList));
+        assertTrue(linkedListIsSorted(unsortedLinkedList));
     }
 
     public <E extends Comparable<E>> boolean linkedListIsSorted(LinkedList<E> sortedList) {
