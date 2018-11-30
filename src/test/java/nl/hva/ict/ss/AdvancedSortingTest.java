@@ -56,9 +56,7 @@ public class AdvancedSortingTest {
 
             // Try to keep measurements steady
             System.gc();
-
             timeNeeded = TimeUnit.NANOSECONDS.toMillis(finish - start);
-
             System.out.printf("%d;%d%n", numberOfPlayers, timeNeeded);
             System.out.flush();
         }
@@ -66,12 +64,6 @@ public class AdvancedSortingTest {
 
     @Test
     public void measureEfficiencyLinkedList() {
-//        LinkedList<Player> playerList = new LinkedList<>();
-//        playerList.add(new Player("Appa", " Aaaa",145431));
-
-
-
-
         System.out.printf("LinkedList implementation%n");
         long timeNeeded = 0;
         for (int numberOfPlayers = 100; numberOfPlayers < UPPER_LIMIT && timeNeeded < TWENTY_SECONDS; numberOfPlayers *= 2) {
