@@ -1,11 +1,13 @@
 package nl.hva.ict.ss;
 
 import nl.hva.ict.ss.util.ArrayQuickSort;
+import nl.hva.ict.ss.util.LinkedListQuickSort;
 
 import java.util.LinkedList;
 
 
 public class AdvancedSorts {
+
     public static ArrayQuickSort arraySorter = new ArrayQuickSort();
 
     /**
@@ -15,7 +17,12 @@ public class AdvancedSorts {
      * @param <E>
      * @return
      */
-    public static <E extends Comparable<E>> LinkedList<E> quickSort(LinkedList<E> unsorted) {
+    public static  <E extends Comparable<E>> LinkedList<E> quickSort(LinkedList<E> unsorted) {
+        LinkedListQuickSort a;
+        a = new LinkedListQuickSort();
+        a.LinkedListQuickSort(unsorted);
+        quickSort(unsorted);
+
         return unsorted;
     }
 

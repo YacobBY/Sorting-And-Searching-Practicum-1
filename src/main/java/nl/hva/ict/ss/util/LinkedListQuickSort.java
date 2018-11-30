@@ -6,21 +6,9 @@ public class LinkedListQuickSort {
 
     public static LinkedList returnList = new LinkedList();
 
-    public static void main(String[] args) {
-        LinkedList listie = new LinkedList<Integer>();
-        listie.add(5);
-        listie.add(1);
-        listie.add(2);
-        listie.add(2);
-        listie.add(989);
-        listie.add(989);
-        listie.add(22);
-        System.out.println(listie.size());
-        sortLinkedList(listie);
-        System.out.println(returnList);
-
-//        System.out.println(sortLinkedList(listie));
-
+    public<E extends Comparable<E>> LinkedList<E> LinkedListQuickSort(LinkedList<E> toSortList){
+        sortLinkedList(toSortList);
+        return returnList;
     }
 
     public static <E extends Comparable<E>> void sortLinkedList(LinkedList<E> toSortList) {
