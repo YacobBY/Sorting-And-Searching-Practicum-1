@@ -9,6 +9,8 @@ import java.util.LinkedList;
 public class AdvancedSorts {
 
     public static ArrayQuickSort arraySorter = new ArrayQuickSort();
+    public static LinkedListQuickSort linkedListSorter = new LinkedListQuickSort();
+
 
     /**
      * Implement quicksort using LinkedList only! Usage of anything but LinkedList will result in failing the assignment!
@@ -18,10 +20,7 @@ public class AdvancedSorts {
      * @return
      */
     public static  <E extends Comparable<E>> LinkedList<E> quickSort(LinkedList<E> unsorted) {
-        LinkedListQuickSort a;
-        a = new LinkedListQuickSort();
-//        a.LinkedListQuickSort(unsorted);
-        quickSort(unsorted);
+        linkedListSorter.sortLinkedList(unsorted);
 
         return unsorted;
     }
