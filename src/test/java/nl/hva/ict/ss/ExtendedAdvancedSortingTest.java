@@ -3,7 +3,8 @@ package nl.hva.ict.ss;
 import nl.hva.ict.ss.util.NameReader;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertTrue;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,7 +21,7 @@ import java.util.Random;
 public class ExtendedAdvancedSortingTest {
     static final int MAX_HIGH_SCORE = 100_000;
     static final int TWENTY_SECONDS = 20_000;
-//    static final int UPPER_LIMIT = 1 << 20; // 1.048.576
+    //    static final int UPPER_LIMIT = 1 << 20; // 1.048.576
     static final int UPPER_LIMIT = 1000; // 1.048.576
     static final Random randomizer = new SecureRandom();
     static ArrayList<Player> sortedArrayList = new ArrayList<>();
@@ -50,47 +51,31 @@ public class ExtendedAdvancedSortingTest {
     }
 
     @Test
-    public void measureEfficiencyArray() {
-        ArrayList<Player> comparisonList = new ArrayList(AdvancedSorts.quickSort(unsortedLinkedList));
-//        unsortedLinkedList =  AdvancedSorts.quickSort(unsortedLinkedList);
-//
-//        for (Object player: unsortedLinkedList){
-//            comparisonList.add(player);
-////            System.out.println(player.getHighScore() + " " + player.getFirstName() + " " + player.getLastName());
-//        }
-//        for (Player player: comparisonList){
-//            System.out.println(player.getHighScore() + " " + player.getFirstName() + " " + player.getLastName());
-//        }
-        System.out.println(comparisonList.size());
-        for (int i = 0; i <comparisonList.size() ; i++) {
-            if (comparisonList.get(i) == sortedArrayList.get(i)){
-                System.out.println("jadenk " +  i + " Highscore:"+ comparisonList.get(i).getHighScore() + " " + comparisonList.get(i).getFirstName() + " " + comparisonList.get(i).getLastName());
+    public <E extends Comparable<E>> void checkIfLinkedListIsSorted() {
+        LinkedList<Player> as = AdvancedSorts.quickSort(unsortedLinkedList);
+        LinkedList<Player> sortedList = AdvancedSorts.quickSort(as);
+        System.out.println("size:");
+        System.out.println(sortedList.size());
+
+        assertTrue(linkedListIsSorted(sortedList));
+    }
+    public <E extends Comparable<E>> boolean linkedListIsSorted(LinkedList<E> sortedList) {
+        E currentIteration = sortedList.getFirst();
+
+        for (E player : sortedList) {
+            if (currentIteration.compareTo(player) != -1) {
+                System.out.println("before: ");
+//                return false;
             }
-            else {
-System.out.println("1 "+ comparisonList.get(i).getHighScore() + " " + comparisonList.get(i).getFirstName() + " " + comparisonList.get(i).getLastName());
-System.out.println("2 "+sortedArrayList.get(i).getHighScore() + " " + sortedArrayList.get(i).getFirstName() + " " + sortedArrayList.get(i).getLastName());
-            }
+            currentIteration = player;
         }
+        return true;
     }
 
+
     @Test
-    public void measureEfficiencyLinkedList() {
-        ArrayList<Player> comparisonList = new ArrayList(AdvancedSorts.quickSort(unsortedLinkedList));
-
-        System.out.println(comparisonList.size());
-
-        Player currentIteration = unsortedLinkedList.getFirst();
-        for (Player player : unsortedLinkedList){
-            if(currentIteration.compareTo(player)==-1){
-                System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-            }
-            else{
-                System.out.println("yep");
-            }
-        }
-
-
-
+    public void measureEfficiencyArray() {
+    }
 //        for (int i = 0; i <comparisonList.size() ; i++) {
 //            if (comparisonList.get(i) == sortedArrayList.get(i)){
 //                System.out.println("jadenk " +  i + " Highscore:"+ comparisonList.get(i).getHighScore() + " " + comparisonList.get(i).getFirstName() + " " + comparisonList.get(i).getLastName());
@@ -100,7 +85,7 @@ System.out.println("2 "+sortedArrayList.get(i).getHighScore() + " " + sortedArra
 //                System.out.println("2 "+sortedArrayList.get(i).getHighScore() + " " + sortedArrayList.get(i).getFirstName() + " " + sortedArrayList.get(i).getLastName());
 //            }
 //        }
-    }
+
 }
 
 //        unsortedLinkedList =  AdvancedSorts.quickSort(unsortedLinkedList);
