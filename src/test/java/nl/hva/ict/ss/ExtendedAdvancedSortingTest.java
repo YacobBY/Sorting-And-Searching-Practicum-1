@@ -49,13 +49,13 @@ public class ExtendedAdvancedSortingTest {
 
         assertTrue(linkedListIsSorted(unsortedLinkedList));
     }
+//Playersorted check
+    public boolean linkedListIsSorted(LinkedList<Player> sortedList) {
 
-    public <E extends Comparable<E>> boolean linkedListIsSorted(LinkedList<E> sortedList) {
-
-        System.out.println(unsortedLinkedList);
-        Player currentIteration = unsortedLinkedList.getFirst();
+        System.out.println(sortedList);
+        Player currentIteration = sortedList.getFirst();
         boolean output = true;
-        for (Player player : unsortedLinkedList) {
+        for (Player player : sortedList) {
             //Als previous player niet kleiner of gelijk is  (-1 of 0)
             if (currentIteration.compareTo(player) >0 ) {
                 System.out.println("ERROR");
