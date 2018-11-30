@@ -77,7 +77,7 @@ public class ExtendedAdvancedSortingTest {
     public void checkArraySorter() {
         Player player1 = new Player("AA", "bb", 100);
         Player player2 = new Player("zz", "aa", 200);
-        Player player3 = new Player("zxc", "zz", 300);
+        Player player3 = new Player("zxc", "zz", 300);// Must swap this with next for lastname
         Player player4 = new Player("AA", "aa", 300);
         Player player5 = new Player("AA", "zz", 500);
 
