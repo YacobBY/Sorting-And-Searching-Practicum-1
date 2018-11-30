@@ -60,7 +60,8 @@ public class ExtendedAdvancedSortingTest {
         Player currentIteration = unsortedLinkedList.getFirst();
         boolean output = true;
         for (Player player : unsortedLinkedList) {
-            if (currentIteration.compareTo(player) == 1) {
+            //Als previous player niet kleiner of gelijk is  (-1 of 0)
+            if (currentIteration.compareTo(player) >0 ) {
                 System.out.println("ERROR");
                 System.out.println("previous " + currentIteration.getHighScore() + " " + currentIteration.getFirstName() + " " + currentIteration.getLastName());
                 System.out.println("current " + player.getHighScore() + " " + player.getFirstName() + " " + player.getLastName());
@@ -71,7 +72,8 @@ public class ExtendedAdvancedSortingTest {
             }
             currentIteration = player;
         }
-        return true;
+        
+        return output;
     }
 }
 //        assertTrue(true);
