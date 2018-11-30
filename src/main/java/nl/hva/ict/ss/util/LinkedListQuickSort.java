@@ -25,6 +25,9 @@ public class LinkedListQuickSort {
         listie.add(new Player("AA", "zz", 443));
         listie.add(new Player("AA", "zz", 444));
         listie.add(new Player("AA", "zz", 444));
+        listie.add(new Player("AA", "zz", 444));
+        listie.add(new Player("AA", "zz", 444));
+        listie.add(new Player("AA", "zz", 444));
 
 
         System.out.println(listie.size());
@@ -39,7 +42,7 @@ public class LinkedListQuickSort {
     public static <E extends Comparable<E>> LinkedList<E> sortLinkedList(LinkedList<E> toSortList) {
         LinkedList returnList = new LinkedList();
         if (toSortList == null ||toSortList.size() == 0) {
-            return returnList;
+            return toSortList;
         }
         if (toSortList.size() == 1) {
 
@@ -57,7 +60,8 @@ public class LinkedListQuickSort {
                     System.out.println("lowerList: " + lowerBound);
 
                 }
-                else if (pivot.compareTo(listObject) == -1) { //Last element is bigger than first element
+                else {
+//                    if (pivot.compareTo(listObject) == -1) { //Last element is bigger than first element
                     higherBound.add(listObject);
                     System.out.println("higherList: " + higherBound);
                 }
