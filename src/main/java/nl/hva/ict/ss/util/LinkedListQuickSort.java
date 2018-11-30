@@ -29,7 +29,6 @@ public class LinkedListQuickSort {
         listie.add(new Player("AA", "zz", 444));
         listie.add(new Player("AA", "zz", 444));
 
-
         System.out.println(listie.size());
         listie = sortLinkedList(listie);
         for (Player player:listie){
