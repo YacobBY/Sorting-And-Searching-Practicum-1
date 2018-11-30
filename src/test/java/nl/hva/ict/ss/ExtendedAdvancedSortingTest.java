@@ -5,9 +5,12 @@ import nl.hva.ict.ss.util.LinkedListQuickSort;
 import nl.hva.ict.ss.util.NameReader;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
 import java.security.SecureRandom;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Random;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Just measures the time needed that sorting an increasing number of players.
@@ -43,18 +46,19 @@ public class ExtendedAdvancedSortingTest {
     }
 
     @Test
-    public  void checkLinkedListSorter() {
+    public void checkLinkedListSorter() {
         LinkedListQuickSort.sortLinkedList(unsortedLinkedList);
 
         assertTrue(linkedListIsSorted(unsortedLinkedList));
     }
+
     public boolean linkedListIsSorted(LinkedList<Player> sortedList) {
 
 //        System.out.println(sortedList);
         Player currentIteration = sortedList.getFirst();
         boolean output = true;
         for (Player player : sortedList) {
-            if (currentIteration.compareTo(player) >0 ) {
+            if (currentIteration.compareTo(player) > 0) {
                 System.out.println("ERROR");
                 System.out.println("previous " + currentIteration.getHighScore() + " " + currentIteration.getFirstName() + " " + currentIteration.getLastName());
                 System.out.println("current " + player.getHighScore() + " " + player.getFirstName() + " " + player.getLastName());
@@ -70,24 +74,30 @@ public class ExtendedAdvancedSortingTest {
 
 
     @Test
-    public  void checkIfArrayIsSorted() {{
+    public void checkArraySorter() {
+        Player player1 = new Player("AA", "bb", 100);
+        Player player2 = new Player("zz", "aa", 200);
+        Player player3 = new Player("zxc", "zz", 300);
+        Player player4 = new Player("AA", "aa", 300);
+        Player player5 = new Player("AA", "zz", 500);
 
-        Player player1 = new Player("Wouter", "Verdegaal", 420);
-        Player player2 = new Player("AKerim", "Airlik", 400);
-        Player player3 = new Player("Jan", "deMan", 400);
-        Player player4 = new Player("Peter", "van", 400);
-        Player player5 = new Player("Pieter", "Baas", 100);
-        Player player6 = new Player("Klaas", "Dijkhof", 50);
+        ArrayQuickSort sorter = new ArrayQuickSort();
+        Player[] players = {player1, player2, player3, player5, player4};
+        players = sorter.sort(players);
+//        for (Player i: players) {
+//            System.out.println( i.getHighScore() + " " +i.getLastName() + " "+ i.getFirstName());
+//        }
 
-        Player[] playerArray = {player1, player2, player3, player4, player5, player6};
+        boolean returnvalue = true;
+        for (int i = 0; i < players.length - 1; i++) {
 
-        //this expectedlist's player order = Klaas,Pieter,AKerim,Jan,Peter,Wouter
-        //if the data is changed in one of these players the test should fail. for instance if Peter Van has been changed to Peter Ban
-        Player[] sortedArray = AdvancedSorts.quickSort(playerArray);
-
-        Player[] expectedSortofPlayers = {player6, player5, player2, player3, player4, player1};
-        assert(Arrays.equals(expectedSortofPlayers, sortedArray));
-    }
+            if ((players[i].compareTo(players[i + 1])) > 0) {
+                System.out.println("1current " + players[i].getHighScore() + " " + players[i].getFirstName() + " " + players[i].getLastName());
+                System.out.println("2current " + players[i + 1].getHighScore() + " " + players[i + 1].getFirstName() + " " + players[i + 1].getLastName());
+                returnvalue = false;
+            }
+        }
+        assertTrue(returnvalue);
     }
 
 
