@@ -21,7 +21,6 @@ public class AdvancedSorts {
      */
     public static  <E extends Comparable<E>> LinkedList<E> quickSort(LinkedList<E> unsorted) {
 
-
         return linkedListSorter.sortLinkedList(unsorted);
     }
 
