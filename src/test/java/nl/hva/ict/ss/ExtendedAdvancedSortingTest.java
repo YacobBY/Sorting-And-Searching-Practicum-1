@@ -20,7 +20,11 @@ import java.util.Random;
 public class ExtendedAdvancedSortingTest {
     static final int MAX_HIGH_SCORE = 100_000;
     static final int TWENTY_SECONDS = 20_000;
+<<<<<<< HEAD
     //    static final int UPPER_LIMIT = 1 << 20; // 1.048.576
+=======
+//    static final int UPPER_LIMIT = 1 << 20; // 1.048.576
+>>>>>>> master
     static final int UPPER_LIMIT = 10; // 1.048.576
     static final Random randomizer = new SecureRandom();
     static ArrayList<Player> sortedArrayList = new ArrayList<>();
@@ -50,13 +54,56 @@ public class ExtendedAdvancedSortingTest {
     }
 
     @Test
+<<<<<<< HEAD
     public  void checkIfLinkedListIsSorted() {
         LinkedList<Player> sortedList = AdvancedSorts.quickSort(unsortedLinkedList);
+=======
+    public <E extends Comparable<E>> void checkIfLinkedListIsSorted() {
+        LinkedList<Player> as = AdvancedSorts.quickSort(unsortedLinkedList);
+        LinkedList<Player> sortedList = AdvancedSorts.quickSort(as);
+>>>>>>> master
         System.out.println("size:");
         System.out.println(sortedList.size());
 
         assertTrue(linkedListIsSorted(sortedList));
     }
+<<<<<<< HEAD
+=======
+    public <E extends Comparable<E>> boolean linkedListIsSorted(LinkedList<E> sortedList) {
+        E currentIteration = sortedList.getFirst();
+
+    @Test
+    public void measureEfficiencyLinkedList() {
+
+        System.out.println(unsortedLinkedList);
+        Player currentIteration = unsortedLinkedList.getFirst();
+        boolean output  = true;
+        for (Player player : unsortedLinkedList){
+            if(currentIteration.compareTo(player)==1){
+                System.out.println("ERROR");
+                System.out.println("previous "+currentIteration.getHighScore() + " " + currentIteration.getFirstName() + " " + currentIteration.getLastName());
+                System.out.println("current "+player.getHighScore() + " " + player.getFirstName() + " " + player.getLastName());
+
+                output = false;
+            }
+            else{
+                System.out.println("yep");
+            }
+            currentIteration = player;
+        }
+        assertTrue(true);
+
+
+//        for (int i = 0; i <comparisonList.size() ; i++) {
+//            if (comparisonList.get(i) == sortedArrayList.get(i)){
+//                System.out.println("jadenk " +  i + " Highscore:"+ comparisonList.get(i).getHighScore() + " " + comparisonList.get(i).getFirstName() + " " + comparisonList.get(i).getLastName());
+//            }
+//            else {
+//                System.out.println("1 "+ comparisonList.get(i).getHighScore() + " " + comparisonList.get(i).getFirstName() + " " + comparisonList.get(i).getLastName());
+//                System.out.println("2 "+sortedArrayList.get(i).getHighScore() + " " + sortedArrayList.get(i).getFirstName() + " " + sortedArrayList.get(i).getLastName());
+//            }
+//        }
+>>>>>>> master
 
     public <E extends Comparable<E>> boolean linkedListIsSorted(LinkedList<E> sortedList) {
 
@@ -78,6 +125,7 @@ public class ExtendedAdvancedSortingTest {
         return true;
     }
 }
+<<<<<<< HEAD
 //        assertTrue(true);
 
 
@@ -91,6 +139,8 @@ public class ExtendedAdvancedSortingTest {
 //            }
 //        }
 
+=======
+>>>>>>> master
 
 //        unsortedLinkedList =  AdvancedSorts.quickSort(unsortedLinkedList);
 //

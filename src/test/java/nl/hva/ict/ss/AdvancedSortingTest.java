@@ -51,7 +51,7 @@ public class AdvancedSortingTest {
             System.gc();
 
             long start = System.nanoTime();
-            AdvancedSorts.quickSort(players);
+//            AdvancedSorts.quickSort(players);
             long finish = System.nanoTime();
 
             // Try to keep measurements steady
@@ -66,6 +66,12 @@ public class AdvancedSortingTest {
 
     @Test
     public void measureEfficiencyLinkedList() {
+//        LinkedList<Player> playerList = new LinkedList<>();
+//        playerList.add(new Player("Appa", " Aaaa",145431));
+
+
+
+
         System.out.printf("LinkedList implementation%n");
         long timeNeeded = 0;
         for (int numberOfPlayers = 100; numberOfPlayers < UPPER_LIMIT && timeNeeded < TWENTY_SECONDS; numberOfPlayers *= 2) {
