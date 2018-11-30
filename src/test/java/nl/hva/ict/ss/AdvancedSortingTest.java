@@ -51,7 +51,7 @@ public class AdvancedSortingTest {
             System.gc();
 
             long start = System.nanoTime();
-//            AdvancedSorts.quickSort(players);
+            AdvancedSorts.quickSort(players);
             long finish = System.nanoTime();
 
             // Try to keep measurements steady

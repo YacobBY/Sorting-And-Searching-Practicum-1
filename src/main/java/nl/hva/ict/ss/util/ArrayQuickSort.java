@@ -6,19 +6,20 @@ public class ArrayQuickSort {
 
 
     public static void main(String a[]) {
-        Player player1 = new Player("AA", "aaa", 446);
-        Player player2 = new Player("AA", "aaa", 443);
-        Player player3 = new Player("AA", "zz", 446);
+        Player player1 = new Player("AA", "bb", 446);
+        Player player2 = new Player("zz", "aa", 441);
+        Player player3 = new Player("AA", "aa", 446);
+        Player player4 = new Player("zxc", "zz", 446);
         Player player5 = new Player("AA", "zz", 446);
-        Player player6 = new Player("AA", "zz", 446);
-        Player player7 = new Player("AA", "zz", 446);
+        Player player6 = new Player("AA", "aa", 441);
+        Player player7 = new Player("AA", "zz", 441);
         Player player8 = new Player("AA", "zz", 446);
 
         ArrayQuickSort sorter = new ArrayQuickSort();
-        Player[] input = {player1,player2,player3};
+        Player[] input = {player1,player2,player3,player5,player7,player4};
         input = sorter.sort(input);
         for (Player i: input) {
-            System.out.println(i.getFirstName() + " "+ i.getHighScore() + " ");
+            System.out.println( i.getHighScore() + " " +i.getLastName() + " "+ i.getFirstName());
         }
     }
     public <E extends Comparable<E>> E[] sort(E[] inputArr) {
