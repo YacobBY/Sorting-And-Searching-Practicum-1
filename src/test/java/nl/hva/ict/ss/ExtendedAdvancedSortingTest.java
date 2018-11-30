@@ -1,5 +1,6 @@
 package nl.hva.ict.ss;
 
+import nl.hva.ict.ss.util.LinkedListQuickSort;
 import nl.hva.ict.ss.util.NameReader;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -21,7 +22,7 @@ public class ExtendedAdvancedSortingTest {
     static final int MAX_HIGH_SCORE = 100_000;
     static final int TWENTY_SECONDS = 20_000;
     //    static final int UPPER_LIMIT = 1 << 20; // 1.048.576
-    static final int UPPER_LIMIT = 10; // 1.048.576
+    static final int UPPER_LIMIT = 50; // 1.048.576
     static final Random randomizer = new SecureRandom();
     static LinkedList<Player> unsortedLinkedList = new LinkedList<>();
 
@@ -38,6 +39,7 @@ public class ExtendedAdvancedSortingTest {
             unsortedLinkedList.addLast(toAdd);
 
         }
+        LinkedListQuickSort.sortLinkedList(unsortedLinkedList);
         System.out.printf("%nStart measurements.%n%n");
         System.out.flush();
 
