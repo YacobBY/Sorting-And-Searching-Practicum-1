@@ -68,8 +68,9 @@ public class LinkedListQuickSort {
             System.out.println("returnlist is nu " + returnList);
             higherBound = sortLinkedList(higherBound);
             while (higherBound.size()>0){
-                System.out.println("Deze items kwamen van linksonder:");
+                System.out.println("Deze items kwamen van rechtsonder:");
                 returnList.add(higherBound.pollFirst());
+                System.out.println(returnList);
             }
 
 
