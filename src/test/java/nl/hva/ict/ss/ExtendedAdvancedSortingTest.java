@@ -49,22 +49,19 @@ public class ExtendedAdvancedSortingTest {
 
         assertTrue(linkedListIsSorted(unsortedLinkedList));
     }
-//Playersorted check
     public boolean linkedListIsSorted(LinkedList<Player> sortedList) {
 
         System.out.println(sortedList);
         Player currentIteration = sortedList.getFirst();
         boolean output = true;
         for (Player player : sortedList) {
-            //Als previous player niet kleiner of gelijk is  (-1 of 0)
             if (currentIteration.compareTo(player) >0 ) {
                 System.out.println("ERROR");
                 System.out.println("previous " + currentIteration.getHighScore() + " " + currentIteration.getFirstName() + " " + currentIteration.getLastName());
                 System.out.println("current " + player.getHighScore() + " " + player.getFirstName() + " " + player.getLastName());
-
                 output = false;
             } else {
-                System.out.println("yep");
+                System.out.println("Linkedlist is sorted");
             }
             currentIteration = player;
         }
@@ -72,26 +69,3 @@ public class ExtendedAdvancedSortingTest {
         return output;
     }
 }
-//        assertTrue(true);
-
-
-//        for (int i = 0; i <comparisonList.size() ; i++) {
-//            if (comparisonList.get(i) == sortedArrayList.get(i)){
-//                System.out.println("jadenk " +  i + " Highscore:"+ comparisonList.get(i).getHighScore() + " " + comparisonList.get(i).getFirstName() + " " + comparisonList.get(i).getLastName());
-//            }
-//            else {
-//                System.out.println("1 "+ comparisonList.get(i).getHighScore() + " " + comparisonList.get(i).getFirstName() + " " + comparisonList.get(i).getLastName());
-//                System.out.println("2 "+sortedArrayList.get(i).getHighScore() + " " + sortedArrayList.get(i).getFirstName() + " " + sortedArrayList.get(i).getLastName());
-//            }
-//        }
-
-
-//        unsortedLinkedList =  AdvancedSorts.quickSort(unsortedLinkedList);
-//
-//        for (Object player: unsortedLinkedList){
-//            comparisonList.add(player);
-////            System.out.println(player.getHighScore() + " " + player.getFirstName() + " " + player.getLastName());
-//        }
-//        for (Player player: comparisonList){
-//            System.out.println(player.getHighScore() + " " + player.getFirstName() + " " + player.getLastName());
-//        }
