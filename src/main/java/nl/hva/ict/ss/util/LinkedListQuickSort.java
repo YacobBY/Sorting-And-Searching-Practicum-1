@@ -40,15 +40,16 @@ public class LinkedListQuickSort {
     }
 
     public static <E extends Comparable<E>> LinkedList<E> sortLinkedList(LinkedList<E> toSortList) {
-        LinkedList returnList = new LinkedList();
         if (toSortList == null ||toSortList.size() == 0) {
             return toSortList;
         }
         if (toSortList.size() == 1) {
-
-            System.out.println("Nothing to sort");
+//            System.out.println("Nothing to sort");
             return (toSortList);
         } else {
+
+            LinkedList returnList = new LinkedList();
+
             E pivot = toSortList.getFirst();
             LinkedList<E> lowerBound = new LinkedList<>();
             LinkedList<E> higherBound = new LinkedList<>();
@@ -66,29 +67,28 @@ public class LinkedListQuickSort {
 //                    System.out.println("higherList: " + higherBound);
                 }
             }
-            System.out.println("fullprint: lb "+lowerBound + " pivot: " + pivot + " hb: "+higherBound);
+//            System.out.println("fullprint: lb "+lowerBound + " pivot: " + pivot + " hb: "+higherBound);
 
 
-            System.out.println("Linkedlist " + pivot + "is done sorting");
+//            System.out.println("Linkedlist " + pivot + "is done sorting");
             lowerBound = sortLinkedList(lowerBound);
             while (lowerBound.size()!=0){
-                System.out.println("Deze items kwamen van linksonder:");
+//                System.out.println("Deze items kwamen van linksonder:");
                 returnList.add(lowerBound.pollFirst());
 //                System.out.println(returnList);
             }
 
             returnList.add(pivot);
 
-            System.out.println("returnlist is nu " + returnList);
+//            System.out.println("returnlist is nu " + returnList);
             higherBound = sortLinkedList(higherBound);
             while (higherBound.size()>0){
 //                System.out.println("Deze items kwamen van rechtsonder:");
                 returnList.add(higherBound.pollFirst());
             }
 
-
+            return returnList;
         }
-        return returnList;
     }
 
 
