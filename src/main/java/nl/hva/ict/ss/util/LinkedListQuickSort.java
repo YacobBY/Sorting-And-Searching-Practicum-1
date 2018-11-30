@@ -1,5 +1,7 @@
 package nl.hva.ict.ss.util;
 
+import nl.hva.ict.ss.Player;
+
 import java.util.LinkedList;
 
 public class LinkedListQuickSort {
@@ -11,18 +13,18 @@ public class LinkedListQuickSort {
 //        return returnList;
 //    }
     public static void main(String[] args) {
-        LinkedList listie = new LinkedList<Integer>();
-        listie.add(8);
-        listie.add(1);
-        listie.add(2);
-        listie.add(3);
-        listie.add(989);
-        listie.add(454);
-        listie.add(22);
+        LinkedList<Player> listie = new LinkedList<>();
+        listie.add(new Player("AA", "aaa", 444));
+        listie.add(new Player("AA", "bb", 445));
+        listie.add(new Player("AA", "bb", 444));
+        listie.add(new Player("AA", "aaa", 444));
+        listie.add(new Player("AA", "aaa", 444));
+
         System.out.println(listie.size());
         listie = sortLinkedList(listie);
-        System.out.println("finalprint +" + listie);
-
+        for (Player player:listie){
+            System.out.println("current " + player.getHighScore() + " " + player.getFirstName() + " " + player.getLastName());
+        }
 //        System.out.println(sortLinkedList(listie));
 
     }
@@ -65,6 +67,7 @@ public class LinkedListQuickSort {
             }
 
             returnList.add(pivot);
+
             System.out.println("returnlist is nu " + returnList);
             higherBound = sortLinkedList(higherBound);
             while (higherBound.size()>0){
