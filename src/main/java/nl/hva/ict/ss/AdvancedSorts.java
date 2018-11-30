@@ -20,7 +20,7 @@ public class AdvancedSorts {
     public static  <E extends Comparable<E>> LinkedList<E> quickSort(LinkedList<E> unsorted) {
         LinkedListQuickSort a;
         a = new LinkedListQuickSort();
-        a.LinkedListQuickSort(unsorted);
+//        a.LinkedListQuickSort(unsorted);
         quickSort(unsorted);
 
         return unsorted;
