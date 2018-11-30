@@ -57,13 +57,13 @@ public class LinkedListQuickSort {
                 E listObject = toSortList.pollLast();
                 if (pivot.compareTo(listObject) >= 0) { //Last element is smaller or equal to first element and must go left
                     lowerBound.add(listObject);
-                    System.out.println("lowerList: " + lowerBound);
+//                    System.out.println("lowerList: " + lowerBound);
 
                 }
                 else {
 //                    if (pivot.compareTo(listObject) == -1) { //Last element is bigger than first element
                     higherBound.add(listObject);
-                    System.out.println("higherList: " + higherBound);
+//                    System.out.println("higherList: " + higherBound);
                 }
             }
             System.out.println("fullprint: lb "+lowerBound + " pivot: " + pivot + " hb: "+higherBound);
@@ -74,7 +74,7 @@ public class LinkedListQuickSort {
             while (lowerBound.size()!=0){
                 System.out.println("Deze items kwamen van linksonder:");
                 returnList.add(lowerBound.pollFirst());
-                System.out.println(returnList);
+//                System.out.println(returnList);
             }
 
             returnList.add(pivot);
@@ -82,7 +82,7 @@ public class LinkedListQuickSort {
             System.out.println("returnlist is nu " + returnList);
             higherBound = sortLinkedList(higherBound);
             while (higherBound.size()>0){
-                System.out.println("Deze items kwamen van linksonder:");
+//                System.out.println("Deze items kwamen van rechtsonder:");
                 returnList.add(higherBound.pollFirst());
             }
 

@@ -22,7 +22,7 @@ public class ExtendedAdvancedSortingTest {
     static final int MAX_HIGH_SCORE = 100_000;
     static final int TWENTY_SECONDS = 20_000;
     //    static final int UPPER_LIMIT = 1 << 20; // 1.048.576
-    static final int UPPER_LIMIT = 50; // 1.048.576
+    static final int UPPER_LIMIT = 10000; // 1.048.576
     static final Random randomizer = new SecureRandom();
     static LinkedList<Player> unsortedLinkedList = new LinkedList<>();
 
