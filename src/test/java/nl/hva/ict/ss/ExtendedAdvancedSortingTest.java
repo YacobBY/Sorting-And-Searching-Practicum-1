@@ -50,28 +50,16 @@ public class ExtendedAdvancedSortingTest {
     }
 
     @Test
-    public void measureEfficiencyArray() {
-        ArrayList<Player> comparisonList = new ArrayList(AdvancedSorts.quickSort(unsortedLinkedList));
-//        unsortedLinkedList =  AdvancedSorts.quickSort(unsortedLinkedList);
-//
-//        for (Object player: unsortedLinkedList){
-//            comparisonList.add(player);
-////            System.out.println(player.getHighScore() + " " + player.getFirstName() + " " + player.getLastName());
-//        }
-//        for (Player player: comparisonList){
-//            System.out.println(player.getHighScore() + " " + player.getFirstName() + " " + player.getLastName());
-//        }
-        System.out.println(comparisonList.size());
-        for (int i = 0; i <comparisonList.size() ; i++) {
-            if (comparisonList.get(i) == sortedArrayList.get(i)){
-                System.out.println("jadenk " +  i + " Highscore:"+ comparisonList.get(i).getHighScore() + " " + comparisonList.get(i).getFirstName() + " " + comparisonList.get(i).getLastName());
-            }
-            else {
-System.out.println("1 "+ comparisonList.get(i).getHighScore() + " " + comparisonList.get(i).getFirstName() + " " + comparisonList.get(i).getLastName());
-System.out.println("2 "+sortedArrayList.get(i).getHighScore() + " " + sortedArrayList.get(i).getFirstName() + " " + sortedArrayList.get(i).getLastName());
-            }
-        }
+    public <E extends Comparable<E>> void checkIfLinkedListIsSorted() {
+        LinkedList<Player> as = AdvancedSorts.quickSort(unsortedLinkedList);
+        LinkedList<Player> sortedList = AdvancedSorts.quickSort(as);
+        System.out.println("size:");
+        System.out.println(sortedList.size());
+
+        assertTrue(linkedListIsSorted(sortedList));
     }
+    public <E extends Comparable<E>> boolean linkedListIsSorted(LinkedList<E> sortedList) {
+        E currentIteration = sortedList.getFirst();
 
     @Test
     public void measureEfficiencyLinkedList() {
@@ -104,7 +92,7 @@ System.out.println("2 "+sortedArrayList.get(i).getHighScore() + " " + sortedArra
 //                System.out.println("2 "+sortedArrayList.get(i).getHighScore() + " " + sortedArrayList.get(i).getFirstName() + " " + sortedArrayList.get(i).getLastName());
 //            }
 //        }
-    }
+
 }
 
 //        unsortedLinkedList =  AdvancedSorts.quickSort(unsortedLinkedList);
